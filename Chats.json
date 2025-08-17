@@ -1,0 +1,1805 @@
+{
+  "Week 1": [
+    {
+      "date": "2025-08-01 09:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Hi Ruby, my Garmin is alerting me about a sharp drop in my daily steps over the past five days. This is a bit unusual for me, but my work week has been crazy busy. How should I factor this in?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-01 10:05",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Hi Rohan. Thanks for flagging that. It's a great data point. I've noted it for Advik to review. For now, don't worry about trying to catch up on steps. We'll adjust your plan for the rest of the week to account for this. The key is to listen to your body.",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-01 15:45",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, I've seen the step data. This isn't a long-term trend, but a physiological stressor. For your workout tomorrow, let's substitute the planned HIIT session with a 20-minute Zone 2 cardio session to reduce systemic stress. The goal is active recovery, not adding more strain.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec001",
+      "trigger_reason": "Sudden drop in daily steps for 5 days (busy work week)"
+    },
+    {
+      "date": "2025-08-02 08:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Acknowledged. Thanks for the quick response. Just a general question, what’s the best way to track my nutrition for you guys?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-02 09:15",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, a simple food log with photos or a brief description is a great start. It helps me see your patterns. I've added a guide on how to do that easily in your app.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 2": [
+    {
+      "date": "2025-08-08 07:45",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I've been so rushed with work this week that I've skipped breakfast six days in a row. I'm just grabbing a coffee and heading out. Is this going to throw my plan off?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-08 08:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, skipping breakfast for a week is a significant change to your metabolic routine. It can lead to energy crashes and increase cravings later. I'd like you to try a new protocol to address this. For the next week, let's incorporate a simple, 'grab-and-go' protein shake. It's better than skipping entirely and will stabilize your blood sugar. I’ll add a few quick recipes to your plan.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec002",
+      "trigger_reason": "Skipping breakfast for 6 days in a row"
+    },
+    {
+      "date": "2025-08-08 14:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, a gentle reminder that your Q1 review call is coming up. I've sent a calendar invitation to your assistant, Sarah.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-09 10:15",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Thanks, Ruby. We've tentatively accepted. What's the main agenda?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-09 10:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, this is Neel. The Q1 review is a chance to consolidate all our work, review your baseline data from the past month, and formalize the long-term plan for the next quarter. We'll present a clear, data-driven roadmap to your goals.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 3": [
+    {
+      "date": "2025-08-15 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Team, I'm on a domestic business trip this week and my workout frequency has dropped to almost zero. My hotel gym is terrible. What's the best way to maintain some of my progress without access to my usual equipment?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-15 11:20",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, understood. No need for a gym. The goal for this trip is maintenance, not progression. I've designed a 15-minute bodyweight routine focused on mobility and core strength. It requires no equipment and can be done in your hotel room. I'll send the details and a short video demonstration to your app.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec003",
+      "trigger_reason": "Domestic trip – reduced workout frequency"
+    },
+    {
+      "date": "2025-08-16 11:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Just a quick thought. I've been reading up on how sleep impacts recovery. My Garmin sleep data seems a bit general. Is there a better way to get more detailed information on sleep cycles?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-16 12:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, that's a key area for us. Garmin provides a good overview, but devices like the Oura Ring or Whoop strap offer more granular data on sleep stages, heart rate variability (HRV), and respiratory rate. We can explore upgrading your telemetry once we've established your baseline.",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-17 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Sounds good. I'd be willing to switch if the data is better. My PA, Sarah, will be in touch to schedule a quick call about an upcoming travel itinerary.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-17 14:15",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Understood, Rohan. We'll be ready for her call. Looking forward to discussing the next trip.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 4": [
+    {
+      "date": "2025-08-22 14:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, the results from your recent blood test are in. Dr. Warren has reviewed them. They show your Vitamin D levels are on the low side. This is quite common in our region.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-22 14:15",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Okay, what's the plan to fix it? Will I need to take supplements?",
+      "topic": "supplements",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-22 15:30",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, low Vitamin D is a common finding and easily correctable. Based on your levels, I'm prescribing a daily Vitamin D3 supplement. Ruby will have it ordered and delivered to you, and we'll re-test in a few months to ensure it's effective.",
+      "topic": "supplements",
+      "linked_decision_id": "dec004",
+      "trigger_reason": "Blood test shows low Vitamin D"
+    },
+    {
+      "date": "2025-08-23 09:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Makes sense. Thanks. Also, I read something online about how certain foods can impact blood pressure. My family has a history of high BP, so that's a major concern for me. Is that something we'll be looking at?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-23 10:20",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. Your family history is a key factor in our plan. We'll be focusing on a nutrition strategy that incorporates foods rich in potassium and magnesium, while being mindful of sodium intake. This will be a core part of our ongoing work.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-24 18:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm on a quick trip to Seoul next week. It's a last-minute flight for a day trip. Anything I should do to mitigate the travel stress?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-24 18:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, for a short trip, the key is pre-hydration and minimizing in-flight processed foods. I've added a quick note to your calendar with a few tips. Travel safe!",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 5": [
+    {
+      "date": "2025-08-29 08:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Whoop is showing my resting heart rate is up by about 12 bpm for the last three days. I feel fine, but the data is alarming. What's causing this?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-29 09:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "I see that, Rohan. An elevated RHR is a strong signal of physiological stress—it's your body working harder than usual. It could be a sign of dehydration or a fight against a minor bug. Let's make today a complete rest day. No strenuous exercise. Focus on hydration. We'll monitor it closely.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec005",
+      "trigger_reason": "Resting heart rate up by 12 bpm for 3 days"
+    },
+    {
+      "date": "2025-08-29 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I am also considering buying a smart scale that tracks body composition (fat vs muscle). Is that a worthwhile investment for my goals?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-29 15:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "That's a fantastic idea. Body composition is a key metric. A smart scale provides good directional data for fat and muscle mass. I'd recommend a few brands that sync well with our platform. I'll add them to your plan.",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-30 08:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Just a quick thought on my nutrition. I've been reading about the benefits of probiotics for gut health. Is that something we should consider adding to my supplement plan?",
+      "topic": "supplements",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-08-30 10:00",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, gut health is a key pillar of our approach. We're going to address that through a nutrition protocol focused on adding fermented foods to your diet. Once we've established a baseline from your gut microbiome test, we can consider a more targeted probiotic supplement if needed.",
+      "topic": "supplements",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 6": [
+    {
+      "date": "2025-09-05 17:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, I'm getting some discomfort in my left knee after my last two interval runs. It's a dull ache, nothing sharp. Is this something I need to worry about?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-05 17:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, let's address this immediately. The ache suggests an overload issue. I'm modifying your running plan for the next two weeks to focus on active recovery and form-building. We will shift your next session to a low-impact Zone 2 workout on the bike to reduce stress on your knee while maintaining your cardio fitness. I'll also add a hip mobility routine to your plan to address any underlying muscle imbalances.",
+      "topic": "injury",
+      "linked_decision_id": "dec006",
+      "trigger_reason": "Knee discomfort after interval runs"
+    },
+    {
+      "date": "2025-09-06 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Understood. The change makes sense. What's the best way to support my recovery from a nutrition standpoint?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-06 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, to support recovery, we're going to add an anti-inflammatory protocol to your diet. I’ve updated your plan to include foods rich in Omega-3 fatty acids and antioxidants. We'll also focus on a post-workout protein shake within 30 minutes of your workouts to accelerate muscle repair.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-07 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm flying to the US for a week next month. I want to make sure I'm prepared for the jet lag. What's the best way to handle it?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-07 15:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a long-haul flight is a major stressor. We're going to create a comprehensive 'Trans-Pacific Protocol' for you. It will include a specific light exposure schedule, a meal timing plan, and in-flight mobility routines to minimize the impact of the time zone shift. I’ll send it to your app next week so you have time to review it.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 7": [
+    {
+      "date": "2025-09-12 20:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I've noticed my evening snacking has increased significantly in the last week. I'm finding it hard to stick to my plan after dinner. Any suggestions?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-12 21:15",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, that's a common challenge. Evening snacking can often be a response to daytime cravings or a lack of satiety from dinner. Let's try to preempt this. I’m adding a 'nightcap' protocol to your plan. It’s a warm herbal tea with a tablespoon of collagen peptides. The collagen will help you feel fuller, and the tea can serve as a new, calming ritual to replace the snacking habit.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec007",
+      "trigger_reason": "Evening snacking increasing calorie intake"
+    },
+    {
+      "date": "2025-09-13 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I was reading that certain vitamins can impact mood and energy levels. Are there any we should be focusing on?",
+      "topic": "supplements",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-13 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on B vitamins and magnesium, as they play a key role in energy production and stress response. We'll be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "supplements",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-14 15:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, what are your thoughts on using a foam roller? I've heard it can help with muscle soreness and recovery. Is that something you recommend?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-14 16:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, a foam roller can be a great tool for recovery. I've added a few simple routines to your app that focus on key areas like your hamstrings and quads. This is a simple, effective way to improve your recovery and reduce muscle soreness.",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 8": [
+    {
+      "date": "2025-09-19 06:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Team, just landed in London after a long international flight. I'm wrecked, and my Whoop is confirming it with a low recovery score. My sleep last night was terrible. How do I adjust my plan for the next few days to get back on track?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-19 07:00",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, this is a classic case of jet lag. Your Whoop is accurately reflecting the stress of the time zone shift. The plan for today is minimal. Let's skip your workout. Instead, focus on a 30-minute walk outside in the morning sunlight to reset your circadian rhythm. We've logged this as the 'jet lag protocol' in your plan. You can resume your regular exercise plan once your recovery score is green again.",
+      "topic": "travel",
+      "linked_decision_id": "dec008",
+      "trigger_reason": "International trip – jet lag + poor sleep quality"
+    },
+    {
+      "date": "2025-09-20 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I had a business dinner last night. The meal was later than my usual TRE window. My recovery is yellow today. Is that related?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-20 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, yes. A late meal, especially a heavy one, can significantly impact your sleep quality and recovery score. The data from your Whoop is showing that your body is working to digest the food when it should be focused on repair and recovery. This is a great data point for your personalized nutrition plan.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-21 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, I'm feeling a bit overwhelmed with all the data I'm getting from the Whoop. It's a lot to process. What's the best way to handle all this information?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-21 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, that's completely normal. The data is meant to inform, not overwhelm. Our goal is to synthesize the data for you and provide a clear, actionable plan. We will be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 9": [
+    {
+      "date": "2025-09-26 09:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Whoop HRV has been significantly lower than my baseline for a full week now. There's no obvious reason for it. I feel a bit off, but the data is pretty stark. What could be causing this?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-26 10:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a suppressed HRV for a full week is a strong signal that your body is dealing with a stressor. Since we've ruled out overtraining and illness, I suspect it may be related to a cognitive stressor. I recommend incorporating a guided breathing exercise from Dr. Evans’ protocol into your daily routine. We will track if this improves your HRV over the next week.",
+      "topic": "wearable_data",
+      "linked_decision_id": "dec009",
+      "trigger_reason": "HRV significantly lower than baseline for 1 week"
+    },
+    {
+      "date": "2025-09-27 11:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I am also considering buying a smart scale that tracks body composition (fat vs muscle). Is that a worthwhile investment for my goals?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-27 12:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "That's a fantastic idea. Body composition is a key metric. A smart scale provides good directional data for fat and muscle mass. I'd recommend a few brands that sync well with our platform. I'll add them to your plan.",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-28 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, what are your thoughts on using a foam roller? I've heard it can help with muscle soreness and recovery. Is that something you recommend?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-09-28 15:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, a foam roller can be a great tool for recovery. I've added a few simple routines to your app that focus on key areas like your hamstrings and quads. This is a simple, effective way to improve your recovery and reduce muscle soreness.",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 10": [
+    {
+      "date": "2025-10-03 19:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I've been getting a lot of bloating after dinner lately. I had a big pasta dish with a lot of garlic and onions. Is this a nutrition issue?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-03 20:10",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, that is a common reaction. High-carb meals, especially with certain vegetables, can cause that. We've logged this as a data point. The next time you have a similar meal, let's try a small amount of an enzyme supplement with your meal. We'll track your symptoms to see if it helps. This is a simple experiment to find what works for you.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec010",
+      "trigger_reason": "Bloating after high-carb dinners"
+    },
+    {
+      "date": "2025-10-04 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm on a business trip next week. My assistant is finalizing the details. I'll send you the travel itinerary once it's confirmed. Anything I should do in the meantime?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-04 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, that's great. We'll be ready for it. In the meantime, I've added a few tips to your travel plan on how to manage stress and hydration while flying.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-05 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Dr. Warren, I've read that certain diagnostic tests, like a full-body MRI, can be useful for early detection of diseases. What's your take on that?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-05 15:30",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, a full-body MRI is a powerful tool for proactive health. It can be useful for early detection of certain conditions, especially for someone with your family history. It’s part of a comprehensive strategy for longevity and we can explore it further.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 11": [
+    {
+      "date": "2025-10-10 11:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, your latest blood panel is back. The lab report shows your fasting glucose is slightly above the healthy range. Dr. Warren and Carla are reviewing the full results now.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-10 13:45",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, your fasting glucose is a key metric for metabolic health. To address this, we're introducing a new dietary protocol. From now on, your breakfasts will focus on protein and healthy fats, with minimal carbs. This will help stabilize your blood sugar throughout the morning. I've sent you a list of quick breakfast ideas to your plan.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec011",
+      "trigger_reason": "Fasting glucose slightly above healthy range"
+    },
+    {
+      "date": "2025-10-11 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I feel like I'm not making as much progress with my strength training. What's the best way to track my progress and ensure I'm getting stronger?",
+      "topic": "exercise_plan",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-11 11:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, we're going to introduce a new tracking protocol. You'll log your weights and reps in the app after each strength session. This is a simple but powerful way to ensure you're practicing 'progressive overload', which is the key to building strength and muscle mass. I've sent you a guide on how to do that easily in your app.",
+      "topic": "exercise_plan",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-12 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what are your thoughts on a meditation practice to manage stress? I've been feeling a bit overwhelmed lately.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-12 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, meditation is a powerful tool for stress management. It can improve your focus and cognitive function. We're going to add a simple, 5-minute guided meditation to your daily plan. We'll track its effect on your HRV and subjective stress levels to see if it's working for you.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 12": [
+    {
+      "date": "2025-10-17 18:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, my wrist feels a bit sore after my push-up sessions. It’s a dull ache, not a sharp pain. Am I doing something wrong?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-17 18:45",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, thanks for the feedback. This is a common issue and likely due to form or a lack of wrist mobility. I'm adding a wrist mobility warm-up to your app that you should do before every workout with push-ups. I'm also modifying your plan to use elevated push-ups (e.g., on a bench) for the next two weeks to reduce the direct load on your wrists. The goal is to build strength with proper form before progressing.",
+      "topic": "injury",
+      "linked_decision_id": "dec012",
+      "trigger_reason": "Wrist pain during push-up sessions"
+    },
+    {
+      "date": "2025-10-18 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-18 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-19 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm flying to the US next week for a business trip. My assistant is finalizing the details. Anything I should do to prepare for the trip?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-19 15:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a long-haul flight is a major stressor. We're going to create a comprehensive 'Trans-Pacific Protocol' for you. It will include a specific light exposure schedule, a meal timing plan, and in-flight mobility routines to minimize the impact of the time zone shift. I’ll send it to your app next week so you have time to review it.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 13": [
+    {
+      "date": "2025-10-24 12:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I’m on a business trip in Korea. The local food is delicious but I suspect it's high in sodium. I’m feeling a bit bloated and my Whoop is showing some data irregularities. How can I adjust?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-24 13:15",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, your suspicion is correct. A high-sodium diet can lead to water retention and affect your biomarkers. Let’s adjust your hydration protocol for this trip. I've added a plan to your app that focuses on increased water intake with a specific emphasis on electrolyte balance without added sodium. It should help mitigate the effects of the local cuisine.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec013",
+      "trigger_reason": "Business trip meals high in sodium"
+    },
+    {
+      "date": "2025-10-25 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Dr. Warren, I've read about a new a blood test that can detect a risk for Alzheimer’s. Is that something we should consider?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-25 11:30",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, that is a key area of research for longevity. We'll be looking at your genetics and other biomarkers to assess your risk for neurodegenerative diseases. We'll discuss this further at your next diagnostic panel review.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-26 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-26 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 14": [
+    {
+      "date": "2025-10-31 08:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Garmin is showing a drop in my estimated VO₂ max score. It’s been on a downward trend for about a week. What’s the reason for this?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-10-31 09:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a drop in VO₂ max score is a signal of a decrease in your aerobic capacity. We need to address this. Let's modify your plan to incorporate more structured cardio. I'm adding two specific Zone 5 HIIT sessions per week to your plan. This type of high-intensity training is the most effective way to improve your VO₂ max.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec014",
+      "trigger_reason": "Drop in VO₂ max score detected"
+    },
+    {
+      "date": "2025-11-01 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-01 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-02 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm flying to Japan next week for a business trip. My assistant is finalizing the details. Anything I should do to prepare for the trip?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-02 15:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a long-haul flight is a major stressor. We're going to create a comprehensive 'Trans-Pacific Protocol' for you. It will include a specific light exposure schedule, a meal timing plan, and in-flight mobility routines to minimize the impact of the time zone shift. I’ll send it to your app next week so you have time to review it.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 15": [
+    {
+      "date": "2025-11-07 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I just logged my water intake for the last few days, and it's been consistently low. I've felt a bit foggy and lethargic. Is this related?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-07 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. Low hydration can affect everything from cognitive function to athletic performance. We're going to implement a strict hydration plan. I've added daily reminders to your app to prompt you to drink water and a simple recipe for an electrolyte drink you can make at home to ensure you are properly hydrated throughout the day.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec015",
+      "trigger_reason": "Low hydration levels for 5+ days"
+    },
+    {
+      "date": "2025-11-08 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I am looking for a new running app that can track my progress and provide me with more detailed feedback. Any recommendations?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-08 11:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, that's a great idea. We're going to introduce a new tracking protocol. We'll be looking at your cadence, stride length, and ground contact time to optimize your running form and prevent injury. I've sent you a guide on how to do that easily in your app.",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-09 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-09 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 16": [
+    {
+      "date": "2025-11-14 15:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, a quick update on your labs. Your iron levels are lower than we'd like to see, which can contribute to fatigue. Dr. Warren and Carla are on this.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-14 16:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, to address the iron deficiency, we're going to adjust your supplement routine. We will add a chelated iron supplement to your plan, which is better absorbed. I’ll also provide a list of iron-rich foods, and we'll focus on pairing them with Vitamin C sources to increase absorption.",
+      "topic": "supplements",
+      "linked_decision_id": "dec016",
+      "trigger_reason": "Iron deficiency found in lab results"
+    },
+    {
+      "date": "2025-11-15 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I've noticed a strange metallic taste in my mouth some mornings. Could this be related to my water? I live in an older home.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-15 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, that's a great observation. We're going to arrange for a third-party environmental testing company to perform a comprehensive water quality analysis at your residence. They can test for heavy metals like lead and copper, and other contaminants.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-16 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-16 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 17": [
+    {
+      "date": "2025-11-21 11:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I'm back from my domestic trip. My workout plan was completely disrupted. I'm feeling a bit out of sync. What's the best way to get back into my routine?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-21 12:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, that's completely normal. We're going to treat the next week as a 're-entry' phase. I've modified your workout plan for the next seven days to be a lighter, de-loading week. The focus is on consistency and proper form, not intensity, to prevent injury and get your body reacclimated to the routine.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec017",
+      "trigger_reason": "Domestic trip – disrupted workout plan"
+    },
+    {
+      "date": "2025-11-22 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-22 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-23 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-23 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 18": [
+    {
+      "date": "2025-11-28 08:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Whoop is showing that my sleep duration has been under 5 hours for the past four nights. I'm feeling it at work. My mental focus is way off. Any ideas why?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-28 09:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, chronic sleep deprivation will have a direct impact on your cognitive performance. Your data shows that. Let's try to identify the cause. I've sent you a new 'sleep hygiene' protocol to follow tonight. It includes a specific wind-down ritual and a recommendation for no screens after 9 pm. We'll track your sleep duration with your Whoop and see if this intervention works.",
+      "topic": "lifestyle",
+      "linked_decision_id": "dec018",
+      "trigger_reason": "Sleep duration <5 hrs for 4 consecutive nights"
+    },
+    {
+      "date": "2025-11-29 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I've noticed a strange metallic taste in my mouth some mornings. Could this be related to my water? I live in an older home.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-29 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, that's a great observation. We're going to arrange for a third-party environmental testing company to perform a comprehensive water quality analysis at your residence. They can test for heavy metals like lead and copper, and other contaminants.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-30 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-11-30 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 19": [
+    {
+      "date": "2025-12-05 15:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I'm up 2 kilograms on the scale in the last three weeks. I don't think I've been eating that differently. What's going on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-05 16:20",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, we've noted the weight change. A 2kg increase in three weeks points to a lifestyle issue, not a dietary one. I've logged the observation. To address this, we're going to adjust your daily calorie goals and focus more on protein intake and nutrient timing, especially around your workouts, to manage satiety and muscle recovery. I’ve updated your plan with the new targets.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec019",
+      "trigger_reason": "Unplanned weight gain of 2 kg in 3 weeks"
+    },
+    {
+      "date": "2025-12-06 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm flying to Japan next week for a business trip. My assistant is finalizing the details. Anything I should do to prepare for the trip?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-06 11:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a long-haul flight is a major stressor. We're going to create a comprehensive 'Trans-Pacific Protocol' for you. It will include a specific light exposure schedule, a meal timing plan, and in-flight mobility routines to minimize the impact of the time zone shift. I’ll send it to your app next week so you have time to review it.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-07 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-07 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 20": [
+    {
+      "date": "2025-12-12 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, my legs are still sore more than three days after my last workout. It’s making my day-to-day activities uncomfortable. What am I doing wrong?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-12 11:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, this is a sign your body isn't recovering properly. Soreness is normal, but persisting for more than three days is not. To address this, we're adjusting your recovery protocol. I’ve added a 15-minute foam rolling and mobility routine to your plan that you should do on your rest days. It will help flush out waste products from your muscles and accelerate your recovery. We will also incorporate a pre-workout warm-up and post-workout cooldown to improve your structural readiness.",
+      "topic": "injury",
+      "linked_decision_id": "dec020",
+      "trigger_reason": "Soreness persisting >3 days after workout"
+    },
+    {
+      "date": "2025-12-13 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-13 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-14 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-14 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 21": [
+    {
+      "date": "2025-12-19 14:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, your latest blood panel is back. The lab report shows your LDL cholesterol is slightly elevated. Carla and Dr. Warren are reviewing the full results now.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-19 15:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, elevated LDL cholesterol is a key indicator for long-term health. We're going to address this through a targeted nutrition strategy. I've updated your plan to prioritize foods rich in soluble fiber and healthy fats, and to reduce your intake of saturated fats. This is a powerful lever for improving your lipid panel. We'll re-test in the next quarter.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec021",
+      "trigger_reason": "LDL cholesterol slightly elevated"
+    },
+    {
+      "date": "2025-12-20 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Dr. Warren, I've read about a new a blood test that can detect a risk for Alzheimer’s. Is that something we should consider?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-20 11:30",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, that is a key area of research for longevity. We'll be looking at your genetics and other biomarkers to assess your risk for neurodegenerative diseases. We'll discuss this further at your next diagnostic panel review.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-21 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-21 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 22": [
+    {
+      "date": "2025-12-26 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I'm back from my international trip, and the time zone shift completely messed up my workout schedule. I feel like I'm out of sync. Any advice on how to get back on track?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-26 11:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, the time zone shift is a significant stressor. To get back on track, we're going to adjust your workout plan for the next week. I'm adding a 're-acclimation' routine that focuses on light, Zone 1 cardio and mobility work. We’ll also add a 'light exposure' protocol to your calendar to help reset your circadian rhythm.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec022",
+      "trigger_reason": "International trip – time zone shift affecting workouts"
+    },
+    {
+      "date": "2025-12-27 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-27 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-28 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2025-12-28 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 23": [
+    {
+      "date": "2026-01-02 08:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Whoop is showing a sustained period of high stress levels detected during the work week. I feel mentally drained and can't seem to focus. Any suggestions?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-02 10:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, high stress levels are a key metric we track. We've logged this observation. Dr. Evans, our stress resilience expert, recommends a 'cognitive reset' protocol. I've scheduled a short virtual session for you to learn a few simple breathing techniques you can use throughout your day to manage stress. This will directly impact your nervous system, and we'll track its effect on your HRV.",
+      "topic": "lifestyle",
+      "linked_decision_id": "dec023",
+      "trigger_reason": "High stress levels detected during work week"
+    },
+    {
+      "date": "2026-01-03 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-03 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-04 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-04 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 24": [
+    {
+      "date": "2026-01-09 09:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I'm back to my old habit of skipping breakfast and not hydrating properly, especially with the busy work schedule. I feel sluggish. How can I get back on track?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-09 10:15",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, we've noted this. To address the issue, we're going to create a simple 'start-your-day' protocol that focuses on both nutrition and hydration. I’ve updated your plan with a new protocol to have a protein shake and a large glass of water within 30 minutes of waking up. This is a simple, non-negotiable step to stabilize your energy and hydration levels before the day gets away from you.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec024",
+      "trigger_reason": "Skipping breakfast + poor hydration in same week"
+    },
+    {
+      "date": "2026-01-10 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm flying to Japan next week for a business trip. My assistant is finalizing the details. Anything I should do to prepare for the trip?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-10 11:30",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, a long-haul flight is a major stressor. We're going to create a comprehensive 'Trans-Pacific Protocol' for you. It will include a specific light exposure schedule, a meal timing plan, and in-flight mobility routines to minimize the impact of the time zone shift. I’ll send it to your app next week so you have time to review it.",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-11 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-11 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 25": [
+    {
+      "date": "2026-01-16 17:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, I'm getting some shin pain after increasing my running mileage. It's a sharp pain, not just a dull ache. What's the best way to handle this?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-16 18:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, thanks for the feedback. Shin pain, especially when sharp, is a sign of a potential issue. To address this, we're going to adjust your running plan. I’ve added a new protocol that focuses on reducing your mileage and incorporating more strength training for your calves and shins. We'll also work on your running form to ensure you're not overstriding.",
+      "topic": "injury",
+      "linked_decision_id": "dec025",
+      "trigger_reason": "Shin pain after increasing running mileage"
+    },
+    {
+      "date": "2026-01-17 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-17 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-18 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-18 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 26": [
+    {
+      "date": "2026-01-23 11:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, your latest blood panel is back. The lab report shows your thyroid function is borderline low. Dr. Warren has reviewed the full results.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-23 13:45",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, a borderline low thyroid function can be a sign of systemic stress. We don't need to medicate it yet, but we do need to monitor it. My recommendation is to focus on your stress management protocols and sleep hygiene. These two lifestyle factors have the biggest impact on your thyroid health. We'll re-test in the next quarter to see if your levels have normalized.",
+      "topic": "blood_test",
+      "linked_decision_id": "dec026",
+      "trigger_reason": "Thyroid function borderline low"
+    },
+    {
+      "date": "2026-01-24 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm feeling a bit off with my energy levels. I've been reading about how certain foods can impact your energy levels. Are there any we should be focusing on?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-24 11:30",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, absolutely. We'll be focusing on a nutrition protocol that prioritizes whole foods, lean proteins, and complex carbohydrates. We'll also be looking at your blood panel results to see if there are any deficiencies we need to address.",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-25 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-25 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 27": [
+    {
+      "date": "2026-01-30 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I'm back from my domestic trip. I completely missed two workouts. I'm feeling a bit behind on my routine. Any advice?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-30 11:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, missing two workouts is a minor setback, not a failure. We're going to treat this week as a 're-load' week. I've modified your workout plan to a lighter, three-day routine for this week. This will help you get back into your rhythm without overwhelming your system and risking injury. We will resume your normal plan next week.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec027",
+      "trigger_reason": "Domestic trip – missed 2 workouts"
+    },
+    {
+      "date": "2026-01-31 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-01-31 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-01 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-01 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 28": [
+    {
+      "date": "2026-02-06 08:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, my Whoop data is showing that my sleep quality dropped significantly during my hotel stay. I felt like I was sleeping okay, but the data tells a different story. Why would that be?",
+      "topic": "wearable_data",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-06 10:00",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, this is a common issue with travel. A new environment, ambient noise, and lighting can all disrupt your sleep. I've sent you a new 'hotel sleep protocol' to your app. It includes a few simple steps, like bringing a sleep mask and earplugs, to improve your sleep quality. This is an easy way to directly impact a key pillar of your health.",
+      "topic": "lifestyle",
+      "linked_decision_id": "dec028",
+      "trigger_reason": "Sleep quality dropped during hotel stay"
+    },
+    {
+      "date": "2026-02-07 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-07 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-08 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-08 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 29": [
+    {
+      "date": "2026-02-13 19:30",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Carla, I'm having a problem with evening sugar cravings. I can't seem to stop myself from snacking after dinner. Any advice?",
+      "topic": "nutrition",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-13 20:15",
+      "sender": "Carla",
+      "role": "nutritionist",
+      "message": "Rohan, those cravings can often be a sign of a blood sugar crash. We're going to try a new 'sweet-tooth' protocol. I’ve updated your plan with a few healthy snack options that are high in protein and fiber, like Greek yogurt with berries or a handful of almonds. These will help stabilize your blood sugar and curb those cravings.",
+      "topic": "nutrition",
+      "linked_decision_id": "dec029",
+      "trigger_reason": "Increased evening sugar cravings"
+    },
+    {
+      "date": "2026-02-14 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-14 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-15 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-15 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 30": [
+    {
+      "date": "2026-02-20 17:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Rachel, I'm feeling some discomfort in my right shoulder during my resistance training. It's a dull ache, not a sharp pain. Am I doing something wrong?",
+      "topic": "injury",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-20 18:30",
+      "sender": "Rachel",
+      "role": "physiotherapist",
+      "message": "Rohan, shoulder discomfort can be a sign of a muscle imbalance. To address this, we're going to modify your strength program. I've added a new protocol that focuses on strengthening the rotator cuff muscles and improving your shoulder mobility. We'll also reduce the weight on your shoulder exercises and focus on perfect form to prevent further injury.",
+      "topic": "injury",
+      "linked_decision_id": "dec030",
+      "trigger_reason": "Shoulder discomfort during resistance training"
+    },
+    {
+      "date": "2026-02-21 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-21 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-22 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-22 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 31": [
+    {
+      "date": "2026-02-27 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Advik, I'm back from my international trip. The jet lag is hitting hard, and I completely missed my morning workouts. Any advice?",
+      "topic": "travel",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-27 11:15",
+      "sender": "Advik",
+      "role": "performance_scientist",
+      "message": "Rohan, jet lag is a significant stressor. To get back on track, we're going to adjust your recovery plan for the next week. I’m adding a 'jet lag recovery' routine that focuses on light, Zone 1 cardio and mobility work. The goal is to get you back into your routine without overwhelming your system and risking injury.",
+      "topic": "exercise_plan",
+      "linked_decision_id": "dec031",
+      "trigger_reason": "International trip – jet lag + missed morning workouts"
+    },
+    {
+      "date": "2026-02-28 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-02-28 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-01 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-01 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "Week 32": [
+    {
+      "date": "2026-03-06 11:00",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, your full diagnostic panel is back. Dr. Warren has reviewed the full results. Everything looks great, but he wants to focus on your stress levels.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-06 13:45",
+      "sender": "Dr. Warren",
+      "role": "doctor",
+      "message": "Rohan, your latest diagnostic panel confirms that you are in good health. However, we're seeing some subtle biomarkers that suggest that your stress levels are still something we need to monitor. My recommendation is to continue with your stress management protocols and to focus on your sleep hygiene. These two lifestyle factors have the biggest impact on your overall health and well-being.",
+      "topic": "lifestyle",
+      "linked_decision_id": "dec032",
+      "trigger_reason": "Full diagnostic panel review – mostly normal but monitor stress levels"
+    },
+    {
+      "date": "2026-03-07 10:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "I'm looking for a new doctor for my family in Singapore. Can you recommend someone?",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-07 11:30",
+      "sender": "Ruby",
+      "role": "concierge",
+      "message": "Rohan, absolutely. That is part of our family service. I've started the research and will get back to you with a few top recommendations and a clear rationale for each, based on your family's needs.",
+      "topic": "blood_test",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-08 14:00",
+      "sender": "Rohan Patel",
+      "role": "member",
+      "message": "Neel, what's the best way to track my progress and ensure I'm getting the most out of this service?",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    },
+    {
+      "date": "2026-03-08 15:30",
+      "sender": "Neel",
+      "role": "relationship_manager",
+      "message": "Rohan, our goal is to provide a clear, data-driven roadmap to your goals. We'll be providing you with a consolidated monthly report that highlights the key trends and insights, so you don't have to worry about the day-to-day data.",
+      "topic": "motivation",
+      "linked_decision_id": null,
+      "trigger_reason": null
+    }
+  ],
+  "healthMetrics": [
+    { "date": "2025-08-01", "hrv": 45, "rhr": 68, "weight": 75, "ldl": 110, "glucose": 95, "vitaminD": 25 },
+    { "date": "2025-08-22", "hrv": 48, "rhr": 66, "weight": 75, "ldl": 110, "glucose": 95, "vitaminD": 20 },
+    { "date": "2025-08-29", "hrv": 42, "rhr": 70, "weight": 75, "ldl": 110, "glucose": 95, "vitaminD": 20 },
+    { "date": "2025-09-19", "hrv": 38, "rhr": 72, "weight": 75, "ldl": 110, "glucose": 95, "vitaminD": 20 },
+    { "date": "2025-09-26", "hrv": 35, "rhr": 69, "weight": 75, "ldl": 110, "glucose": 95, "vitaminD": 20 },
+    { "date": "2025-10-10", "hrv": 40, "rhr": 67, "weight": 75, "ldl": 110, "glucose": 105, "vitaminD": 28 },
+    { "date": "2025-12-05", "hrv": 48, "rhr": 65, "weight": 77, "ldl": 110, "glucose": 98, "vitaminD": 35 },
+    { "date": "2025-12-19", "hrv": 50, "rhr": 63, "weight": 77, "ldl": 130, "glucose": 98, "vitaminD": 35 },
+    { "date": "2026-01-02", "hrv": 40, "rhr": 68, "weight": 77, "ldl": 125, "glucose": 97, "vitaminD": 38 },
+    { "date": "2026-01-23", "hrv": 45, "rhr": 66, "weight": 77, "ldl": 120, "glucose": 96, "vitaminD": 40, "thyroid": "borderline low" },
+    { "date": "2026-03-06", "hrv": 65, "rhr": 58, "weight": 76, "ldl": 115, "glucose": 90, "vitaminD": 45, "thyroid": "normal" }
+  ],
+  "internalMetrics": {
+    "Dr. Warren": "2.5 hours",
+    "Advik": "5.1 hours",
+    "Carla": "3.8 hours",
+    "Rachel": "2.0 hours",
+    "Ruby": "8.2 hours"
+  }
+}
