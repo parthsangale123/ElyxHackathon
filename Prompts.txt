@@ -1,0 +1,63 @@
+Prompts:
+
+interpret the doc (followed by file upload)
+
+so how should we proceed? what exactly do we need to do in the tasks?
+
+how do we generate communication msgs?
+
+can you generate the msgs for me
+
+give a different one from the pdf example and i am ready to do manual typing so let's do it i have the prompt template ready as well
+
+
+
+You are simulating realistic WhatsApp-style conversations between a member named Rohan Patel and the Elyx healthcare concierge team over an 8-month (32-week) period. === MEMBER PROFILE === - Name: Rohan Patel - Personality: [Insert summary from PDF] - Lifestyle: [Insert summary from PDF] - Chronic Condition: [Insert condition, e.g., high blood pressure] - Constraints: 5 hours/week commitment, 50% plan adherence === ELYX TEAM ROLES === - Ruby (Concierge) – point of contact, schedules, follow-ups - Dr. Warren (Medical) – medical advice, diagnostics - Advik (Performance Scientist) – exercise plans, fitness monitoring - Carla (Nutritionist) – diet plans, supplements - Rachel (Physiotherapist) – injury prevention, recovery - Neel (Relationship Manager) – engagement & motivation === CONSTRAINTS === - ~5 member-initiated conversations/week - Include a mix of short and detailed messages - Use realistic timestamps (YYYY-MM-DD HH:MM), chronological order - Mention wearable data, travel events, tests, or symptoms when relevant - Exercise plan updated every 2 weeks - Travel once per month - Full diagnostic panel every 3 months - Messages must sound natural and realistic - Use all relevant Elyx team roles where appropriate - Show decision-making rationale in relevant messages - *Every decision must have a clear trigger_reason* (an event or observation that caused the decision) - Each trigger must be recorded in the JSON under "trigger_reason" when "linked_decision_id" is not null. === WEEKLY CONTEXTS (From Pre-Mapped Trigger Plan) === 1. Rohan's wearable device flags an alert this week: Sudden drop in daily steps for 5 days (busy work week). He discusses with Elyx team. 2. Rohan experiences lifestyle changes this week: Skipping breakfast for 6 days in a row. He shares with Elyx team. 3. Rohan is traveling this week: Domestic trip – reduced workout frequency. Seeks workout adjustments. 4. Rohan undergoes medical testing this week: Blood test shows low Vitamin D. Elyx discusses follow-up. 5. Wearable alert: Resting heart rate up by 12 bpm for 3 days. Rohan consults Elyx. 6. Injury: Knee discomfort after interval runs. Rachel and team advise. 7. Lifestyle: Evening snacking increasing calorie intake. Carla advises on nutrition. 8. Travel: International trip – jet lag + poor sleep. Elyx adjusts plan. 9. Wearable: HRV significantly lower than baseline for 1 week. Advik investigates. 10. Nutrition: Bloating after high-carb dinners. Carla gives advice. 11. Medical Test: Fasting glucose slightly above healthy range. Elyx team reacts. 12. Injury: Wrist pain during push-up sessions. Rachel suggests modifications. 13. Travel: Business trip meals high in sodium. Carla adjusts diet plan. 14. Wearable: Drop in VO₂ max score detected. Advik modifies exercise. 15. Lifestyle: Low hydration levels for 5+ days. Carla suggests hydration plan. 16. Medical Test: Iron deficiency found in labs. Carla advises supplementation. 17. Travel: Domestic trip – disrupted workout plan. Advik modifies schedule. 18. Wearable: Sleep duration <5 hrs for 4 nights. Elyx suggests adjustments. 19. Lifestyle: Unplanned weight gain of 2 kg in 3 weeks. Elyx adjusts plan. 20. Injury: Soreness persisting >3 days post-workout. Rachel advises recovery changes. 21. Medical Test: LDL cholesterol slightly elevated. Carla advises diet changes. 22. Travel: International trip – time zone shift affecting workouts. Advik updates plan. 23. Wearable: High stress levels detected during work week. Elyx suggests relaxation protocols. 24. Nutrition: Skipping breakfast + poor hydration in same week. Carla modifies plan. 25. Injury: Shin pain after increasing running mileage. Rachel adjusts exercises. 26. Medical Test: Thyroid function borderline low. Dr. Warren follows up. 27. Travel: Domestic trip – missed 2 workouts. Advik gives modified routine. 28. Wearable: Sleep quality dropped during hotel stay. Elyx suggests adjustments. 29. Lifestyle: Increased evening sugar cravings. Carla modifies snacks. 30. Injury: Shoulder discomfort during resistance training. Rachel adjusts program. 31. Travel: International trip – jet lag + missed morning workouts. Elyx adjusts recovery. 32. Medical Test: Full diagnostic panel – mostly normal but monitor stress levels. === OUTPUT FORMAT === Output a single valid JSON object where each key is "Week X" and the value is a JSON array of messages for that week in the format: {   "date": "YYYY-MM-DD HH:MM",   "sender": "Sender Name",   "role": "member|concierge|doctor|nutritionist|physiotherapist|relationship_manager|performance_scientist",   "message": "Text of the message.",   "topic": "wearable_data|supplements|travel|blood_test|exercise_plan|nutrition|injury|motivation",   "linked_decision_id": "decXXX or null",   "trigger_reason": "Description of the event that caused this decision, or null if no decision was made." } === IMPORTANT === - Ensure each week's messages align with its Weekly Context and include the specified trigger. - Only produce JSON. No extra commentary, notes, or explanations. - JSON must be valid and parseable. - Include all 32 weeks in the output.
+
+try to have 5-10 msgs/week
+
+assume that the memeber also does some research or reads about healht and gets curious questions about certain topics so there shd be upto 5 converstations started by the member per week on avg make sure each conversation is human like and doesn't not end with 1 q and 1 answer reply
+
+are you aware about the test panel results to be discussed every 3 months?
+
+is that included in our converstations?
+
+can we like show these test results visually/somehow in task 2
+
+let's start with task 2
+
+well implement it in a website format then let's see what we got
+
+well ain't exactly task 2 is it i will upload the json file and then generate the stuff eh? so that's better also journey timeline is a bit bad not 32 week so....
+
+i want an option to upload the JSON file in WEBPAGE ITSELF so make the website on that lines
+
+can u explain the code
+
+in that JSON file make changes to include internal metrics and health metrics
+
+why do we need these can't we have some in JSON file itself
+
+go through this (followed by file upload)
+
+
+
+Add features to this app that use the Gemini API to call LLMs.
+
+well my man WHY IS THERE SO MUCH SPACE BETWEEN 2 Y VALUES YOU CAN REDUCE THE SCALE ON THE Y AXIS FOR ALL THE GRAPHS
+
+ok bro show me the part where u scale the graphs
+
+how do i adjust how much pixel between 2 values
+
+can you add this to the code i'll edit accordingly
+
+ticks
+
+Add features to this app that use the Gemini API to call LLMs.
+
+i want a line break between 2 charts do it
+
+Add features to this app that use the Gemini API to call LLMs.
+
+make a text file of all the relevant prompts in this chat

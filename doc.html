@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elyx Journey Visualization</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Adapter for date-fns (for time series on charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-6 lg:p-8">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10 w-full max-w-6xl">
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">Elyx Journey Visualization Platform</h1>
+            <p class="text-lg text-gray-600">Tracking Rohan Patel's Personalized Health Journey</p>
+        </header>
+
+        <!-- JSON Upload Section -->
+        <section class="mb-8 p-4 bg-gray-100 rounded-lg shadow-inner flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <label for="json-upload" class="text-gray-700 font-medium">Upload Conversation JSON:</label>
+            <input type="file" id="json-upload" accept=".json" class="block w-full sm:w-auto text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100 cursor-pointer"/>
+            <button id="load-json-btn" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-colors duration-200">
+                Load Data
+            </button>
+            <span id="upload-status" class="text-sm text-gray-600 ml-4 hidden"></span>
+        </section>
+
+        <!-- Member Snapshot -->
+        <section id="member-snapshot-section" class="mb-8 p-4 bg-blue-50 rounded-lg shadow-inner">
+            <h2 class="text-xl font-semibold text-blue-800 mb-3">Member: Rohan Patel</h2>
+            <div id="member-details" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700">
+                <div>
+                    <p><strong class="text-gray-900">Personality:</strong> <span id="member-personality">N/A</span></p>
+                </div>
+                <div>
+                    <p><strong class="text-gray-900">Lifestyle:</strong> <span id="member-lifestyle">N/A</span></p>
+                </div>
+                <div>
+                    <p><strong class="text-gray-900">Chronic Condition:</strong> <span id="member-condition">N/A</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline View -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Journey Timeline</h2>
+            <div id="timeline" class="relative overflow-x-auto pb-4">
+                <div class="flex items-center space-x-8 py-2 min-w-max">
+                    <!-- Timeline elements will be injected here by JavaScript -->
+                    <p id="timeline-placeholder" class="text-gray-500 text-center w-full">Upload JSON to view timeline</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Dashboard -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Metrics Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Health at a Glance -->
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-md flex flex-col justify-between">
+                    <h3 class="text-xl font-bold mb-3">Health at a Glance</h3>
+                    <p class="text-2xl font-semibold mb-1">Latest HRV: <span id="latest-hrv">N/A</span></p>
+                    <p class="text-2xl font-semibold mb-1">Resting Heart Rate: <span id="latest-rhr">N/A</span></p>
+                    <p class="text-2xl font-semibold">Body Weight: <span id="latest-weight">N/A</span></p>
+                </div>
+
+                <!-- Progress Charts -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Progress Charts (8-Month View)</h3>
+                    <div class="space-y-10" id="charts-container"> <!-- Increased space-y for better vertical spacing -->
+                        <p id="charts-placeholder" class="text-gray-600">Charts will appear here once data is loaded.</p>
+                        <div id="rhr-hrv-chart-container" class="hidden h-48">
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Resting Heart Rate (RHR) & HRV</h4>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="rhrHrvChart" data-dataset-index="0">Toggle RHR</button>
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="rhrHrvChart" data-dataset-index="1">Toggle HRV</button>
+                            </div>
+                            <canvas id="rhrHrvChart"></canvas>
+                        </div>
+                        <div id="biomarkers-chart-container" class="hidden h-48">
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Key Biomarkers (LDL, Glucose, Vit D)</h4>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="biomarkersChart" data-dataset-index="0">Toggle LDL</button>
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="biomarkersChart" data-dataset-index="1">Toggle Glucose</button>
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="biomarkersChart" data-dataset-index="2">Toggle Vit D</button>
+                            </div>
+                            <canvas id="biomarkersChart"></canvas>
+                        </div>
+                        <div id="weight-chart-container" class="hidden h-48">
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Body Weight Trend</h4>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <button class="toggle-chart-data px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800 hover:bg-blue-200" data-chart="weightChart" data-dataset-index="0">Toggle Weight</button>
+                            </div>
+                            <canvas id="weightChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decision & Rationale Panel -->
+        <section id="decision-panel" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-2xl relative">
+                <button id="close-decision-panel" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Decision & Rationale</h2>
+                <div id="panel-content" class="space-y-4">
+                    <p><strong class="text-gray-800">Decision:</strong> <span id="panel-decision" class="text-gray-700"></span></p>
+                    <p><strong class="text-gray-800">Trigger:</strong> <span id="panel-trigger" class="text-gray-700"></span></p>
+                    <p><strong class="text-gray-800">Rationale:</strong> <span id="panel-rationale" class="text-gray-700"></span></p>
+                    
+                    <!-- New LLM Buttons -->
+                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200">
+                        <button id="summarize-btn" class="px-4 py-2 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition-colors duration-200">
+                            ✨ Summarize Conversation ✨
+                        </button>
+                        <button id="insight-btn" class="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition-colors duration-200">
+                            ✨ Generate Health Insight ✨
+                        </button>
+                    </div>
+                    <div id="llm-output" class="mt-4 p-3 bg-gray-50 rounded-md border border-gray-200 text-gray-700 hidden">
+                        <p id="llm-text" class="text-sm"></p>
+                        <p id="llm-loading" class="text-sm text-gray-500 hidden">Generating...</p>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4 mt-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Linked Conversation:</h3>
+                        <div id="panel-conversation" class="space-y-2 text-sm text-gray-600 max-h-60 overflow-y-auto rounded-md p-2 bg-gray-50 border border-gray-100">
+                            <!-- Conversation messages will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internal Metrics -->
+        <section id="internal-metrics-section">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Internal Metrics</h2>
+            <div class="bg-purple-50 p-6 rounded-lg shadow-inner">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">Team Hours Log (Last Month)</h3>
+                <ul id="team-hours-list" class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong class="text-gray-900">Dr. Warren:</strong> <span id="dr-warren-hours">N/A</span></li>
+                    <li><strong class="text-gray-900">Advik:</strong> <span id="advik-hours">N/A</span></li>
+                    <li><strong class="text-900">Carla:</strong> <span id="carla-hours">N/A</span></li>
+                    <li><strong class="text-gray-900">Rachel:</strong> <span id="rachel-hours">N/A</span></li>
+                    <li><strong class="text-gray-900">Ruby:</strong> <span id="ruby-hours">N/A</span></li>
+                </ul>
+                <p class="text-sm text-gray-600 mt-2">*(Note: This metric tracks time spent on consultations, data analysis, and logistics for Rohan.)*</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let allConversations = {}; // This will be populated by the uploaded JSON
+        let healthMetrics = []; // This will be populated from the uploaded JSON
+        let internalMetrics = {}; // This will be populated from the uploaded JSON
+        let decisionsMap = {};
+        let charts = {}; // To store Chart.js instances for destruction/update
+        let currentEventData = null; // Stores the data of the currently clicked event for LLM calls
+
+        // Hardcoded member profile details (as these are static per the document)
+        const memberProfile = {
+            personality: "Analytical, driven, values efficiency and evidence-based approaches.",
+            lifestyle: "Regional Head of Sales for a FinTech company, frequent international travel, high-stress demands, 5 hours/week commitment to plan.",
+            chronicCondition: "Family history of heart disease (managing potential high blood pressure), potential POTS diagnosis."
+        };
+
+        // Function to populate initial blank state
+        function initializeBlankState() {
+            // Member Snapshot
+            document.getElementById('member-personality').textContent = 'N/A';
+            document.getElementById('member-lifestyle').textContent = 'N/A';
+            document.getElementById('member-condition').textContent = 'N/A';
+
+            // Timeline
+            document.querySelector('#timeline .flex').innerHTML = '<p id="timeline-placeholder" class="text-gray-500 text-center w-full">Upload JSON to view timeline</p>';
+
+            // Metrics Dashboard
+            document.getElementById('latest-hrv').textContent = 'N/A';
+            document.getElementById('latest-rhr').textContent = 'N/A';
+            document.getElementById('latest-weight').textContent = 'N/A';
+            document.getElementById('charts-placeholder').classList.remove('hidden'); // Show placeholder
+            // Hide chart containers
+            document.getElementById('rhr-hrv-chart-container').classList.add('hidden');
+            document.getElementById('biomarkers-chart-container').classList.add('hidden');
+            document.getElementById('weight-chart-container').classList.add('hidden');
+
+            // Destroy existing chart instances if any
+            for (const chartId in charts) {
+                if (charts[chartId]) {
+                    charts[chartId].destroy();
+                    charts[chartId] = null;
+                }
+            }
+
+
+            // Internal Metrics
+            document.getElementById('dr-warren-hours').textContent = 'N/A';
+            document.getElementById('advik-hours').textContent = 'N/A';
+            document.getElementById('carla-hours').textContent = 'N/A';
+            document.getElementById('rachel-hours').textContent = 'N/A';
+            document.getElementById('ruby-hours').textContent = 'N/A';
+        }
+
+        // Function to populate content after JSON is loaded
+        function populateContentFromJSON() {
+            // Populate Member Snapshot
+            document.getElementById('member-personality').textContent = memberProfile.personality;
+            document.getElementById('member-lifestyle').textContent = memberProfile.lifestyle;
+            document.getElementById('member-condition').textContent = memberProfile.chronicCondition;
+
+            // Populate Metrics Dashboard with latest healthMetrics data
+            if (healthMetrics.length > 0) {
+                const latestMetrics = healthMetrics[healthMetrics.length - 1];
+                document.getElementById('latest-hrv').textContent = `${latestMetrics.hrv}ms`;
+                document.getElementById('latest-rhr').textContent = `${latestMetrics.rhr} bpm`;
+                // Calculate weight change from initial (assuming first entry is initial)
+                const initialWeight = healthMetrics[0].weight;
+                const weightChange = latestMetrics.weight - initialWeight;
+                document.getElementById('latest-weight').textContent = `${weightChange > 0 ? '+' : ''}${weightChange} kg`;
+            } else {
+                document.getElementById('latest-hrv').textContent = 'N/A';
+                document.getElementById('latest-rhr').textContent = 'N/A';
+                document.getElementById('latest-weight').textContent = 'N/A';
+            }
+
+            document.getElementById('charts-placeholder').classList.add('hidden'); // Hide placeholder
+            // Show chart containers
+            document.getElementById('rhr-hrv-chart-container').classList.remove('hidden');
+            document.getElementById('biomarkers-chart-container').classList.remove('hidden');
+            document.getElementById('weight-chart-container').classList.remove('hidden');
+
+            renderTimeline(); // Render the timeline with the loaded data
+            renderCharts(); // Render the interactive charts
+            setupChartToggleButtons(); // Setup the new toggle buttons
+
+            // Populate Internal Metrics from loaded JSON
+            if (internalMetrics) {
+                document.getElementById('dr-warren-hours').textContent = internalMetrics["Dr. Warren"] || 'N/A';
+                document.getElementById('advik-hours').textContent = internalMetrics["Advik"] || 'N/A';
+                document.getElementById('carla-hours').textContent = internalMetrics["Carla"] || 'N/A';
+                document.getElementById('rachel-hours').textContent = internalMetrics["Rachel"] || 'N/A';
+                document.getElementById('ruby-hours').textContent = internalMetrics["Ruby"] || 'N/A';
+            }
+        }
+
+        // Function to process and map decisions from conversation data
+        function processConversations(conversations) {
+            decisionsMap = {}; // Reset map
+            for (const weekKey in conversations) {
+                conversations[weekKey].forEach(msg => {
+                    if (msg.linked_decision_id) {
+                        if (!decisionsMap[msg.linked_decision_id]) {
+                            decisionsMap[msg.linked_decision_id] = {
+                                decision: null,
+                                triggerReason: msg.trigger_reason,
+                                conversation: []
+                            };
+                        }
+                        // Capture the message that describes the decision itself (usually from Elyx team)
+                        // If multiple messages link to the same decision, the first non-member message will set the decision text
+                        if (msg.role !== 'member' && !decisionsMap[msg.linked_decision_id].decision) {
+                            decisionsMap[msg.linked_decision_id].decision = msg.message;
+                        }
+                        decisionsMap[msg.linked_decision_id].conversation.push(msg);
+                    }
+                });
+            }
+            // Sort conversation messages within each decision by date
+            for (const decId in decisionsMap) {
+                decisionsMap[decId].conversation.sort((a, b) => new Date(a.date) - new Date(b.date));
+            }
+        }
+
+        // Function to render the timeline
+        function renderTimeline() {
+            const timelineContainer = document.querySelector('#timeline .flex');
+            timelineContainer.innerHTML = ''; // Clear existing timeline or placeholder
+
+            const eventIcons = {
+                "wearable_data": "❤️",
+                "blood_test": "🧪",
+                "travel": "✈️",
+                "exercise_plan": "🏋️",
+                "nutrition": "🍎",
+                "injury": "🩹",
+                "supplements": "�",
+                "lifestyle": "🧘",
+                "motivation": "📈"
+            };
+
+            const eventsForTimeline = [];
+            for (const weekKey in allConversations) {
+                allConversations[weekKey].forEach(msg => {
+                    // Add all messages to the timeline for now to show full conversation flow
+                    eventsForTimeline.push({
+                        id: msg.linked_decision_id || `msg-${msg.date.replace(/[^a-zA-Z0-9]/g, '')}-${Math.random().toString(36).substring(2, 8)}`, // Unique ID
+                        date: msg.date,
+                        topic: msg.topic,
+                        summary: msg.message,
+                        fullData: msg // Store full message data for panel
+                    });
+                });
+            }
+
+            // Sort events by date
+            eventsForTimeline.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            // Ensure timeline is wide enough for all events (assuming ~120px per event + spacing)
+            const estimatedEventWidth = 120 + 32; // Event width + space between
+            const totalTimelineWidth = eventsForTimeline.length * estimatedEventWidth;
+            timelineContainer.style.minWidth = `${Math.max(window.innerWidth - 64, totalTimelineWidth)}px`;
+
+            eventsForTimeline.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.className = 'relative flex-shrink-0 flex flex-col items-center cursor-pointer group';
+                eventElement.style.width = '120px'; // Fixed width for each event
+                eventElement.dataset.eventId = event.id;
+
+                const icon = eventIcons[event.topic] || "📝"; // Default icon
+                const date = new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+                eventElement.innerHTML = `
+                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl shadow-md transition-transform transform group-hover:scale-110">
+                        ${icon}
+                    </div>
+                    <div class="mt-2 text-center text-sm text-gray-600 font-medium">${date}</div>
+                    <div class="absolute top-full mt-2 w-48 p-2 bg-gray-800 text-white text-xs rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 whitespace-normal break-words">
+                        ${event.summary.substring(0, 70)}${event.summary.length > 70 ? '...' : ''}
+                    </div>
+                    <div class="absolute w-px h-16 bg-gray-300 -bottom-16"></div>
+                `;
+
+                eventElement.addEventListener('click', () => {
+                    updateDecisionPanel(event.fullData);
+                });
+                timelineContainer.appendChild(eventElement);
+            });
+
+            // Add a connecting line between events
+            if (eventsForTimeline.length > 1) {
+                const line = document.createElement('div');
+                line.className = 'absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300 z-0';
+                timelineContainer.prepend(line);
+            }
+        }
+
+        // Function to update the decision panel
+        function updateDecisionPanel(eventData) {
+            currentEventData = eventData; // Store event data for LLM calls
+
+            const panel = document.getElementById('decision-panel');
+            const panelDecision = document.getElementById('panel-decision');
+            const panelTrigger = document.getElementById('panel-trigger');
+            const panelRationale = document.getElementById('panel-rationale');
+            const panelConversation = document.getElementById('panel-conversation');
+            const llmOutputDiv = document.getElementById('llm-output');
+            const llmTextSpan = document.getElementById('llm-text');
+
+            llmOutputDiv.classList.add('hidden'); // Hide previous LLM output
+            llmTextSpan.textContent = ''; // Clear previous LLM text
+
+            let decisionInfo = decisionsMap[eventData.linked_decision_id];
+
+            // Default values for events not directly linked to a decision
+            let decisionText = "N/A";
+            let triggerText = eventData.trigger_reason || "Member initiated conversation / Observation";
+            let rationaleText = "This event represents a communication or observation. Clickable decisions will show a specific rationale.";
+            let conversationToDisplay = [eventData]; // Start with the clicked message
+
+            if (eventData.linked_decision_id && decisionInfo) {
+                decisionText = decisionInfo.decision || "Decision details not explicitly stated in linked message.";
+                triggerText = decisionInfo.triggerReason;
+
+                // Enhanced Rationale Generation based on trigger and decision
+                if (triggerText) {
+                    rationaleText = `To address the observed issue of '${triggerText}', the Elyx team formulated a specific intervention. `;
+                    if (eventData.topic === 'exercise_plan') {
+                        rationaleText += `This involved modifying the exercise plan to optimize performance, recovery, or prevent injury.`;
+                    } else if (eventData.topic === 'nutrition') {
+                        rationaleText += `The nutrition protocol was adjusted to support metabolic health, address cravings, or improve energy levels.`;
+                    } else if (eventData.topic === 'blood_test') {
+                        rationaleText += `A targeted intervention, often involving supplements or dietary changes, was prescribed based on the diagnostic test results.`;
+                    } else if (eventData.topic === 'travel') {
+                        rationaleText += `A specialized travel protocol was implemented to mitigate the physiological stress and disruption caused by frequent travel.`;
+                    } else if (eventData.topic === 'injury') {
+                        rationaleText += `The physical activity plan was modified, and specific recovery protocols were introduced to aid healing and prevent further discomfort.`;
+                    } else if (eventData.topic === 'lifestyle') {
+                        rationaleText += `Lifestyle adjustments, such as stress management techniques or sleep hygiene protocols, were recommended to improve overall well-being.`;
+                    } else if (eventData.topic === 'supplements') {
+                        rationaleText += `Supplementation was advised to address specific deficiencies or support broader health goals identified through diagnostics or symptoms.`;
+                    } else if (eventData.topic === 'wearable_data') {
+                         rationaleText += `Based on insights from wearable data, a personalized adjustment was made to optimize health markers.`;
+                    }
+                } else {
+                    rationaleText = "The rationale is directly linked to the team's expertise and the identified need.";
+                }
+
+                conversationToDisplay = decisionInfo.conversation; // Use the full linked conversation
+            }
+
+            panelDecision.textContent = decisionText;
+            panelTrigger.textContent = triggerText;
+            panelRationale.textContent = rationaleText;
+
+            panelConversation.innerHTML = '';
+            conversationToDisplay.forEach(msg => {
+                const msgElement = document.createElement('div');
+                const roleFormatted = msg.role.replace(/_/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                msgElement.className = `p-2 rounded-lg mb-1 ${msg.role === 'member' ? 'bg-blue-100 self-end text-right' : 'bg-gray-100 self-start text-left'}`;
+                msgElement.innerHTML = `<strong class="text-gray-900">${msg.sender} (${roleFormatted}):</strong> ${msg.message}`;
+                panelConversation.appendChild(msgElement);
+            });
+
+            panel.classList.remove('hidden');
+            panel.classList.add('flex');
+        }
+
+        // Function to render the interactive charts
+        function renderCharts() {
+            // Destroy existing chart instances before rendering new ones
+            for (const chartId in charts) {
+                if (charts[chartId]) {
+                    charts[chartId].destroy();
+                    charts[chartId] = null;
+                }
+            }
+
+            // Chart 1: Resting Heart Rate (RHR) & HRV
+            const rhrHrvCtx = document.getElementById('rhrHrvChart').getContext('2d');
+            charts.rhrHrvChart = new Chart(rhrHrvCtx, {
+                type: 'line',
+                data: {
+                    labels: healthMetrics.map(m => new Date(m.date)),
+                    datasets: [
+                        {
+                            label: 'Resting Heart Rate (bpm)',
+                            data: healthMetrics.map(m => m.rhr),
+                            borderColor: 'rgb(75, 192, 192)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        },
+                        {
+                            label: 'HRV (ms)',
+                            data: healthMetrics.map(m => m.hrv),
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: {
+                                    month: 'MMM yyyy'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            },
+                            ticks: {
+                                maxTicksLimit: 5 // Limit the number of ticks for better spacing
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return new Date(context[0].parsed.x).toLocaleDateString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: Key Biomarkers (LDL, Glucose, Vit D)
+            const biomarkersCtx = document.getElementById('biomarkersChart').getContext('2d');
+            charts.biomarkersChart = new Chart(biomarkersCtx, {
+                type: 'line',
+                data: {
+                    labels: healthMetrics.map(m => new Date(m.date)),
+                    datasets: [
+                        {
+                            label: 'LDL Cholesterol (mg/dL)',
+                            data: healthMetrics.map(m => m.ldl),
+                            borderColor: 'rgb(54, 162, 235)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        },
+                        {
+                            label: 'Fasting Glucose (mg/dL)',
+                            data: healthMetrics.map(m => m.glucose),
+                            borderColor: 'rgb(255, 206, 86)',
+                            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        },
+                        {
+                            label: 'Vitamin D (ng/mL)',
+                            data: healthMetrics.map(m => m.vitaminD),
+                            borderColor: 'rgb(153, 102, 255)',
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: {
+                                    month: 'MMM yyyy'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            },
+                            ticks: {
+                                maxTicksLimit: 5 // Limit the number of ticks for better spacing
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return new Date(context[0].parsed.x).toLocaleDateString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 3: Body Weight Trend
+            const weightCtx = document.getElementById('weightChart').getContext('2d');
+            charts.weightChart = new Chart(weightCtx, {
+                type: 'line',
+                data: {
+                    labels: healthMetrics.map(m => new Date(m.date)),
+                    datasets: [
+                        {
+                            label: 'Body Weight (kg)',
+                            data: healthMetrics.map(m => m.weight),
+                            borderColor: 'rgb(255, 159, 64)',
+                            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                            tension: 0.1,
+                            fill: false,
+                            hidden: false // Initially visible
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: {
+                                    month: 'MMM yyyy'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Weight (kg)'
+                            },
+                            ticks: {
+                                maxTicksLimit: 5 // Limit the number of ticks for better spacing
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return new Date(context[0].parsed.x).toLocaleDateString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Function to set up event listeners for chart toggle buttons
+        function setupChartToggleButtons() {
+            document.querySelectorAll('.toggle-chart-data').forEach(button => {
+                button.addEventListener('click', function() {
+                    const chartId = this.dataset.chart;
+                    const datasetIndex = parseInt(this.dataset.datasetIndex);
+                    const chartInstance = charts[chartId];
+
+                    if (chartInstance) {
+                        const isHidden = chartInstance.isDatasetVisible(datasetIndex);
+                        chartInstance.setDatasetVisibility(datasetIndex, !isHidden);
+                        chartInstance.update(); // Redraw the chart
+
+                        // Update button text
+                        const label = chartInstance.data.datasets[datasetIndex].label;
+                        this.textContent = `${isHidden ? 'Show' : 'Hide'} ${label.split(' ')[0]}`; // Toggle "Show/Hide Label"
+                    }
+                });
+            });
+        }
+
+        // Hugging Face API Call Function with Exponential Backoff (via proxy)
+        const HUGGING_FACE_API_PROXY_URL = 'http://localhost:3000/huggingface-proxy'; // !!! IMPORTANT: REPLACE WITH YOUR ACTUAL BACKEND PROXY URL !!!
+
+        async function callHuggingFaceAPI(promptText, retries = 0) {
+            const maxRetries = 5;
+            const baseDelay = 1000; // 1 second
+
+            try {
+                const payload = { inputs: promptText }; // Hugging Face expects 'inputs'
+                
+                const response = await fetch(HUGGING_FACE_API_PROXY_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    if (response.status === 429 && retries < maxRetries) {
+                        const delay = baseDelay * Math.pow(2, retries) + Math.random() * 1000; // Exponential backoff with jitter
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return callHuggingFaceAPI(promptText, retries + 1); // Retry
+                    }
+                    const errorData = await response.json();
+                    throw new Error(`API error: ${response.status} ${errorData.error || response.statusText}`);
+                }
+
+                const result = await response.json();
+                // Assuming the proxy returns { summary: "..." } or { insight: "..." }
+                // Hugging Face summarization models often return an array like [{ summary_text: "..." }]
+                if (result.summary) { // If proxy returns a 'summary' key
+                    return result.summary;
+                } else if (Array.isArray(result) && result.length > 0 && result[0].summary_text) { // Direct Hugging Face summarization output
+                    return result[0].summary_text;
+                } else if (result.insight) { // If proxy returns an 'insight' key
+                    return result.insight;
+                }
+                else {
+                    throw new Error("Invalid API response structure from proxy.");
+                }
+            }
+            catch (error) {
+                console.error("Hugging Face API call via proxy failed:", error);
+                return `Error: ${error.message}. Ensure your backend proxy is running and correctly configured.`;
+            }
+        }
+
+        // Event listener for Summarize Conversation button
+        document.getElementById('summarize-btn').addEventListener('click', async () => {
+            const llmOutputDiv = document.getElementById('llm-output');
+            const llmTextSpan = document.getElementById('llm-text');
+            const llmLoadingSpan = document.getElementById('llm-loading');
+
+            llmOutputDiv.classList.remove('hidden');
+            llmTextSpan.textContent = '';
+            llmLoadingSpan.classList.remove('hidden');
+
+            if (currentEventData && currentEventData.linked_decision_id) {
+                const conversation = decisionsMap[currentEventData.linked_decision_id].conversation;
+                let conversationText = conversation.map(msg => `${msg.sender} (${msg.role}): ${msg.message}`).join('\n');
+                
+                const prompt = `Summarize the following conversation about Rohan Patel's health journey:\n\n${conversationText}`;
+                
+                const summary = await callHuggingFaceAPI(prompt); // Use the new function
+                llmTextSpan.textContent = summary;
+            } else if (currentEventData) {
+                const prompt = `Summarize the following message from Rohan Patel's health journey:\n\n${currentEventData.sender} (${currentEventData.role}): ${currentEventData.message}`;
+                const summary = await callHuggingFaceAPI(prompt); // Use the new function
+                llmTextSpan.textContent = summary;
+            } else {
+                llmTextSpan.textContent = "No conversation selected to summarize.";
+            }
+            llmLoadingSpan.classList.add('hidden');
+        });
+
+        // Event listener for Generate Health Insight button
+        document.getElementById('insight-btn').addEventListener('click', async () => {
+            const llmOutputDiv = document.getElementById('llm-output');
+            const llmTextSpan = document.getElementById('llm-text');
+            const llmLoadingSpan = document.getElementById('llm-loading');
+
+            llmOutputDiv.classList.remove('hidden');
+            llmTextSpan.textContent = '';
+            llmLoadingSpan.classList.remove('hidden');
+
+            if (currentEventData && currentEventData.trigger_reason) {
+                const prompt = `Given the health trigger: '${currentEventData.trigger_reason}', provide a concise health insight or potential implication for Rohan Patel's overall well-being. Focus on actionable or interpretive insights.`;
+                const insight = await callHuggingFaceAPI(prompt); // Use the new function
+                llmTextSpan.textContent = insight;
+            } else if (currentEventData) {
+                llmTextSpan.textContent = "This event does not have a specific trigger reason to generate an insight from.";
+            } else {
+                llmTextSpan.textContent = "No event selected to generate an insight from.";
+            }
+            llmLoadingSpan.classList.add('hidden');
+        });
+
+
+        // Event listener for JSON file upload
+        document.getElementById('load-json-btn').addEventListener('click', () => {
+            const fileInput = document.getElementById('json-upload');
+            const uploadStatus = document.getElementById('upload-status');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const loadedData = JSON.parse(e.target.result);
+                        
+                        // Populate allConversations from the loaded data (assuming 'Week X' keys)
+                        allConversations = {}; 
+                        for (const key in loadedData) {
+                            if (key.startsWith('Week ')) {
+                                allConversations[key] = loadedData[key];
+                            }
+                        }
+                        
+                        // Populate healthMetrics and internalMetrics from the loaded data
+                        healthMetrics = loadedData.healthMetrics || [];
+                        internalMetrics = loadedData.internalMetrics || {};
+
+                        processConversations(allConversations);
+                        populateContentFromJSON(); // Populate all sections after successful load
+                        uploadStatus.textContent = 'Data loaded successfully!';
+                        uploadStatus.classList.remove('hidden', 'text-red-500');
+                        uploadStatus.classList.add('text-green-600');
+                    } catch (error) {
+                        console.error("Error parsing JSON:", error);
+                        uploadStatus.textContent = 'Error loading JSON. Please check file format.';
+                        uploadStatus.classList.remove('hidden', 'text-green-600');
+                        uploadStatus.classList.add('text-red-500');
+                    }
+                };
+                reader.readAsText(file);
+            } else {
+                uploadStatus.textContent = 'Please select a JSON file to upload.';
+                uploadStatus.classList.remove('hidden', 'text-green-600');
+                uploadStatus.classList.add('text-red-500');
+            }
+        });
+
+        // Close decision panel
+        document.getElementById('close-decision-panel').addEventListener('click', () => {
+            document.getElementById('decision-panel').classList.add('hidden');
+            document.getElementById('decision-panel').classList.remove('flex');
+            currentEventData = null; // Clear current event data
+            document.getElementById('llm-output').classList.add('hidden'); // Hide LLM output
+        });
+
+        // Initial rendering: set everything to blank state
+        window.onload = initializeBlankState;
+    </script>
+</body>
+</html>
+�
